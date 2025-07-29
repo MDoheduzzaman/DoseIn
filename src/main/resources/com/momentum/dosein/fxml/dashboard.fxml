@@ -1,58 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:id="rootPane"
-            fx:controller="com.momentum.dosein.controller.DashboardController"
-            stylesheets="@../css/dashboard.css"
-            styleClass="dashboard-root"
-            prefWidth="800" prefHeight="600">
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="rootPane" prefHeight="600" prefWidth="800" styleClass="dashboard-root" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.DashboardController">
 
     <!-- LEFT NAVIGATION -->
     <left>
-        <VBox styleClass="nav-bar" spacing="10" prefWidth="200" >
+        <VBox prefHeight="600.0" prefWidth="227.0" spacing="10" styleClass="nav-bar">
             <!-- make the logo/header clickable -->
-            <HBox fx:id="navHeader"
-                  styleClass="nav-header"
-                  alignment="CENTER_LEFT"
-                  spacing="10"
-                  prefHeight="60"
-                  onMouseClicked="#handleDashboard">
-                <ImageView fitWidth="30" fitHeight="30" preserveRatio="true">
+            <HBox fx:id="navHeader" alignment="CENTER_LEFT" onMouseClicked="#handleDashboard" prefHeight="60" spacing="10" styleClass="nav-header">
+                <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
                     <image>
-                        <Image url="@../images/logo.png"/>
+                        <Image url="@../images/logo.png" />
                     </image>
                 </ImageView>
-                <Label text="DoseIn" styleClass="nav-logo"/>
+                <Label styleClass="nav-logo" text="DoseIn" />
             </HBox>
-            <Button text="Dashboard"
-                    onAction="#handleDashboard"
-                    styleClass="nav-button"/>
-            <Button text="Manage Schedule"
-                    onAction="#handleManageSchedule"
-                    styleClass="nav-item"/>
-            <Button text="Doctor Contacts"
-                    onAction="#handleDoctorContacts"
-                    styleClass="nav-item"/>
-            <Button text="Emergency"
-                    onAction="#handleEmergency"
-                    styleClass="nav-item"/>
-            <Button text="About Us"
-                    onAction="#handleAboutUs"
-                    styleClass="nav-item"/>
-            <Region VBox.vgrow="ALWAYS"/>
-            <Button text="Sign Out"
-                    onAction="#handleSignOut"
-                    styleClass="nav-signout"/>
+            <Button onAction="#handleDashboard" prefHeight="45.0" prefWidth="200.0" styleClass="left-button" text="Dashboard">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding></Button>
+            <Button onAction="#handleManageSchedule" prefHeight="45.0" prefWidth="200.0" styleClass="left-button" text="Manage Schedule">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding></Button>
+            <Button onAction="#handleDoctorContacts" prefHeight="45.0" prefWidth="200.0" styleClass="left-button" text="Doctor Contacts">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding></Button>
+            <Button onAction="#handleEmergency" prefHeight="45.0" prefWidth="200.0" styleClass="left-button" text="Emergency">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding></Button>
+            <Button onAction="#handleAboutUs" prefHeight="45.0" prefWidth="200.0" styleClass="left-button" text="About Us">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding></Button>
+            <Region VBox.vgrow="ALWAYS" />
+            <Button onAction="#handleSignOut" prefHeight="45.0" prefWidth="200.0" styleClass="sign-out" text="Sign Out">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding></Button>
         </VBox>
     </left>
 
@@ -61,30 +52,31 @@
         <VBox spacing="20" styleClass="main-content">
 
             <!-- Welcome Banner -->
-            <HBox styleClass="welcome-banner" spacing="10" alignment="CENTER_LEFT">
+            <HBox alignment="CENTER_LEFT" spacing="10" styleClass="welcome-banner">
                 <VBox>
-                    <Label fx:id="greetingLabel"    styleClass="welcome-text"/>
-                    <Label fx:id="sloganLabel"      styleClass="welcome-slogan"/>
+                    <Label fx:id="greetingLabel" styleClass="welcome-text" />
+                    <Label fx:id="sloganLabel" styleClass="welcome-slogan" />
                 </VBox>
-                <Region HBox.hgrow="ALWAYS"/>
-                <Label fx:id="timeLabel"         styleClass="time-label"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="timeLabel" styleClass="time-label" />
             </HBox>
 
             <!-- Schedule Header -->
             <HBox alignment="CENTER_LEFT" spacing="10">
-                <Label text="Today's Schedule" styleClass="schedule-header"/>
-                <Region HBox.hgrow="ALWAYS"/>
-                <Button text="Set Reminder"
-                        onAction="#handleSetReminder"
-                        styleClass="schedule-button"/>
+                <Label styleClass="schedule-header" text="Today's Schedule" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleSetReminder" styleClass="schedule-button" text="Set Reminder" />
             </HBox>
 
             <!-- Scrollable Schedule List -->
             <ScrollPane fitToWidth="true" styleClass="schedule-scroll">
                 <content>
-                    <VBox fx:id="scheduleContainer" spacing="10" styleClass="schedule-list"/>
+                    <VBox fx:id="scheduleContainer" spacing="10" styleClass="schedule-list" />
                 </content>
             </ScrollPane>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
         </VBox>
     </center>
 </BorderPane>

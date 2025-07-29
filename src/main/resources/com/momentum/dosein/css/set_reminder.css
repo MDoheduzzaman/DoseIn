@@ -1,14 +1,43 @@
 .reminder-root {
     -fx-background-color: #E0F2E9;
-    -fx-effect: dropshadow( gaussian,rgba(0, 0, 0, 0.3),12, 0.2, 8 , 8);
 }
+/*left side*/
+.project-name{
+    -fx-font-weight: bold;
+    -fx-font-size: 32;
+    -fx-text-fill: white;
+}
+.left-button{
+    -fx-background-color: #3D9574;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-text-fill: white;
+    -fx-font-size: 24;
+    -fx-effect: dropshadow( gaussian,rgba(0, 0, 0, 0.3),6, 0, 0 , 2);
 
+}
+.left-button:hover{
+    -fx-font-weight: bold;
+    -fx-opacity: 0.2;
+}
+.sign-out{
+    -fx-background-color: #DC6D67;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-text-fill: white;
+    -fx-font-size: 24;
+    -fx-effect: dropshadow( gaussian,rgba(0, 0, 0, 0.3),6, 0, 0 , 2);
+}
+.sign-out:hover{
+    -fx-font-weight: bold;
+    -fx-opacity: 0.2;
+}
 .reminder-card {
     -fx-background-color: #fff;
     -fx-padding: 35 35 35 35;
     -fx-background-radius: 18px;
-    -fx-effect: dropshadow(gaussian, #c4e3d466, 18, 0.3, 0, 6);
     -fx-spacing: 26;
+    -fx-effect: dropshadow( gaussian,rgba(0, 0, 0, 0.3),12, 0.2, 8 , 8);
 }
 .time-date{
     -fx-border-color: #E0F2E9;
@@ -52,6 +81,9 @@
 }
 .reminder-list{
     -fx-background-color: #96CBB8;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow( gaussian,rgba(0, 0, 0, 0.3),12, 0.2, 8 , 8);
 }
 
 .reminder-field:hover{

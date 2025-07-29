@@ -5,30 +5,51 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane fx:id="rootPane" prefHeight="600" prefWidth="900" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/set_reminder.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.SetReminderController">
+<BorderPane fx:id="rootPane" prefHeight="600" prefWidth="749.0" styleClass="dashboard-root" stylesheets="@../css/dashboard.css,@../css/set_reminder.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.momentum.dosein.controller.SetReminderController">
 
     <!-- Left Navigation -->
     <left>
         <VBox prefWidth="220" spacing="10" styleClass="nav-bar">
             <HBox alignment="CENTER_LEFT" prefHeight="60" spacing="10" styleClass="nav-header">
-                <ImageView fitHeight="30" fitWidth="30" preserveRatio="true">
+                <ImageView fitHeight="37.0" fitWidth="43.0" preserveRatio="true">
                     <image><Image url="@../images/logo.png" /></image>
+               <HBox.margin>
+                  <Insets left="2.0" />
+               </HBox.margin>
                 </ImageView>
-                <Label styleClass="nav-logo" text="DoseIn" />
+                <Label styleClass="project-name" text="DoseIn" />
             </HBox>
-            <Button onAction="#handleDashboard" styleClass="nav-button" text="Dashboard" />
-            <Button onAction="#handleManageSchedule" styleClass="nav-item" text="Manage Schedule" />
-            <Button onAction="#handleDoctorContacts" styleClass="nav-item" text="Doctor Contacts" />
-            <Button onAction="#handleEmergency" styleClass="nav-item" text="Emergency" />
-            <Button onAction="#handleAboutUs" styleClass="nav-item" text="About Us" />
+            <Button onAction="#handleDashboard" prefHeight="45.0" prefWidth="200.0" styleClass="left-button" text="Dashboard">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding></Button>
+            <Button onAction="#handleManageSchedule" prefHeight="45.0" prefWidth="200.0" styleClass="left-button" text="Manage Schedule">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding></Button>
+            <Button onAction="#handleDoctorContacts" prefHeight="45.0" prefWidth="200.0" styleClass="left-button" text="Doctor Contacts">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding></Button>
+            <Button onAction="#handleEmergency" prefHeight="45.0" prefWidth="200.0" styleClass="left-button" text="Emergency">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding></Button>
+            <Button onAction="#handleAboutUs" prefHeight="45.0" prefWidth="200.0" styleClass="left-button" text="About Us">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding></Button>
             <Region VBox.vgrow="ALWAYS" />
-            <Button onAction="#handleSignOut" styleClass="nav-signout" text="Sign Out" />
+            <Button onAction="#handleSignOut" prefHeight="45.0" prefWidth="200.0" styleClass="sign-out" text="Sign Out">
+            <padding>
+               <Insets bottom="10.0" top="10.0" />
+            </padding></Button>
         </VBox>
     </left>
 
     <center>
-        <VBox alignment="CENTER" spacing="0" styleClass="reminder-root">
-            <VBox fx:id="cardBox" alignment="TOP_CENTER" maxWidth="576.0" prefHeight="583.0" prefWidth="532.0" spacing="24" styleClass="reminder-card" stylesheets="@../css/set_reminder.css">
+        <VBox alignment="CENTER" maxWidth="600.0" prefHeight="559.0" prefWidth="485.0" spacing="0" styleClass="reminder-root">
+            <VBox fx:id="cardBox" alignment="TOP_CENTER" layoutX="1.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="464.0" spacing="24" styleClass="reminder-card" stylesheets="@../css/set_reminder.css">
                 <padding>
                     <Insets bottom="35" left="35" right="35" top="35" />
                 </padding>
@@ -60,45 +81,42 @@
                 </GridPane>
 
                 <!-- Alert Time Card -->
-                <VBox alignment="TOP_LEFT" spacing="12" styleClass="reminder-mini-card" stylesheets="@../css/set_reminder.css">
+                <VBox alignment="TOP_LEFT" prefHeight="129.0" prefWidth="423.0" spacing="12" styleClass="reminder-mini-card" stylesheets="@../css/set_reminder.css">
                     <padding>
-                        <Insets bottom="12" left="15" right="15" top="12" />
+                        <Insets bottom="5.0" top="5.0" />
                     </padding>
                     <Label styleClass="set-reminder-title" stylesheets="@../css/set_reminder.css" text="Alert Time" />
                     <HBox alignment="TOP_LEFT" spacing="16">
                         <!-- Time List -->
-                        <ListView fx:id="timesList" prefHeight="70" prefWidth="143.0" styleClass="reminder-list" stylesheets="@../css/set_reminder.css" />
+                        <ListView fx:id="timesList" styleClass="reminder-list" stylesheets="@../css/set_reminder.css" />
                         <!-- Spinner + AM/PM -->
                         <VBox alignment="CENTER" spacing="7">
                             <HBox alignment="CENTER" spacing="5">
-                                <Spinner fx:id="hourSpinner" editable="true" prefHeight="23.0" prefWidth="63.0" />
+                                <Spinner fx:id="hourSpinner" editable="true" />
                                 <Label text=":" />
-                                <Spinner fx:id="minuteSpinner" editable="true" prefHeight="23.0" prefWidth="68.0" />
+                                <Spinner fx:id="minuteSpinner" editable="true" prefHeight="23.0" />
                             </HBox>
                             <HBox alignment="CENTER" spacing="6">
-                                <RadioButton fx:id="amRadio" prefHeight="16.0" prefWidth="62.0" styleClass="am" stylesheets="@../css/set_reminder.css" text="AM" />
-                                <RadioButton fx:id="pmRadio" prefHeight="16.0" prefWidth="60.0" styleClass="pm" stylesheets="@../css/set_reminder.css" text="PM" />
+                                <RadioButton fx:id="amRadio" styleClass="am" stylesheets="@../css/set_reminder.css" text="AM" />
+                                <RadioButton fx:id="pmRadio" styleClass="pm" stylesheets="@../css/set_reminder.css" text="PM" />
                             </HBox>
                         </VBox>
                         <!-- Add/Remove Buttons -->
                         <VBox alignment="CENTER" spacing="7">
-                            <Button fx:id="addTimeButton" onAction="#handleAddTime" prefHeight="23.0" prefWidth="72.0" styleClass="add" stylesheets="@../css/set_reminder.css" text="Add" />
-                            <Button fx:id="removeTimeButton" onAction="#handleRemoveTime" prefHeight="23.0" prefWidth="73.0" styleClass="remove" stylesheets="@../css/set_reminder.css" text="Remove" />
+                            <Button fx:id="addTimeButton" onAction="#handleAddTime" prefHeight="23.0" prefWidth="37.0" styleClass="add" stylesheets="@../css/set_reminder.css" text="Add" />
+                            <Button fx:id="removeTimeButton" onAction="#handleRemoveTime" prefHeight="30.0" prefWidth="40.0" styleClass="remove" stylesheets="@../css/set_reminder.css" text="Remove" />
                         </VBox>
                     </HBox>
                 </VBox>
 
                 <!-- Additional Info -->
-                <Label styleClass="set-reminder-title" stylesheets="@../css/set_reminder.css" text="Additional Information :" />
-                <TextField fx:id="noteField" prefHeight="35.0" prefWidth="430.0" styleClass="reminder-field" stylesheets="@../css/set_reminder.css" />
+                <Label prefHeight="39.0" prefWidth="366.0" styleClass="set-reminder-title" stylesheets="@../css/set_reminder.css" text="Additional Information :" />
+                <TextField fx:id="noteField" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="394.0" stylesheets="@../css/set_reminder.css" />
 
                 <!-- Bottom Action Buttons -->
-                <HBox alignment="CENTER" spacing="18">
-                    <padding>
-                        <Insets top="20" />
-                    </padding>
-                    <Button onAction="#handleCancel" styleClass="cancel-button" text="Cancel" />
-                    <Button onAction="#handleSetReminder" styleClass="set-reminder-button" text="Set Reminder" />
+                <HBox alignment="CENTER" prefHeight="77.0" prefWidth="394.0" spacing="18">
+                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleCancel" prefHeight="40.0" prefWidth="121.0" styleClass="cancel-button" text="Cancel" />
+                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleSetReminder" prefHeight="25.0" prefWidth="129.0" styleClass="set-reminder-button" text="Set Reminder" />
                 </HBox>
             </VBox>
         </VBox>

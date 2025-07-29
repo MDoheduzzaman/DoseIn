@@ -16,31 +16,31 @@
     -fx-font-size: 24px;
     -fx-text-fill: white;
 }
-.nav-button {
-    -fx-background-color: #00796B;
+.left-button{
+    -fx-background-color: #3D9574;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
     -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-pref-width: 180px;
-    -fx-background-radius: 5px;
-}
-.nav-item {
-    -fx-background-color: #80CBC4;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-pref-width: 180px;
-    -fx-background-radius: 5px;
-}
-.nav-item:hover {
-    -fx-background-color: #4DB6AC;
-}
-.nav-signout {
-    -fx-background-color: #E57373;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-pref-width: 180px;
-    -fx-background-radius: 5px;
-}
+    -fx-font-size: 24;
+    -fx-effect: dropshadow( gaussian,rgba(0, 0, 0, 0.3),6, 0, 0 , 2);
 
+}
+.left-button:hover{
+    -fx-font-weight: bold;
+    -fx-opacity: 0.2;
+}
+.sign-out{
+    -fx-background-color: #DC6D67;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-text-fill: white;
+    -fx-font-size: 24;
+    -fx-effect: dropshadow( gaussian,rgba(0, 0, 0, 0.3),6, 0, 0 , 2);
+}
+.sign-out:hover{
+    -fx-font-weight: bold;
+    -fx-opacity: 0.2;
+}
 /* MAIN CONTENT */
 .main-content {
     -fx-padding: 20;
@@ -51,6 +51,8 @@
     -fx-background-color: #C4E3D4;
     -fx-padding: 10;
     -fx-background-radius: 5px;
+    -fx-effect: dropshadow( gaussian,rgba(0, 0, 0, 0.3),12, 0.3, 8 , 8);
+
 }
 .welcome-text {
     -fx-font-size: 18px;
