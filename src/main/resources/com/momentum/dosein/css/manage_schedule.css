@@ -1,83 +1,308 @@
-/* manage_schedule.css */
+/* manage_schedule.css - Updated to match app color scheme */
 
-/* TITLE & SUBTITLE */
-.manage-title {
-    -fx-font-size: 20px;
-    -fx-text-fill: #00594E;
-}
-.manage-slogan {
-    -fx-font-size: 12px;
-    -fx-text-fill: #00594E;
-    -fx-padding: 5 10;
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 5px;
+/* Root Styles */
+.dashboard-root {
+    -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
+    -fx-background-color: #B8E0D1;
 }
 
-/* SECTION HEADER */
-.manage-section-title {
-    -fx-font-size: 20px;
-    -fx-text-fill: #00594E;
-    -fx-padding: 0 0 5 0;
+/* NAVIGATION - Using dashboard.css completely */
+.nav-bar {
+    -fx-pref-width: 200px;
+    -fx-min-width: 200px;
+    -fx-max-width: 200px;
 }
 
-/* ACTIVE ALERTS PANE */
-.manage-alerts-pane {
-    -fx-background-color: #C4E3D4;
-    -fx-background-radius: 5px;
-    -fx-padding: 10;
-}
-.manage-listview {
-    -fx-background-radius: 5px;
-    -fx-border-radius: 5px;
+/* MAIN CONTENT AREA */
+.main-content {
+    -fx-spacing: 15;
+    -fx-background-color: #B8E0D1;
+    -fx-padding: 30 40 30 40;
 }
 
-/* MEDICINE INFO PANEL */
-.manage-info-pane {
-    -fx-background-color: #80CBC4;
-    -fx-background-radius: 5px;
-    -fx-padding: 15;
-    -fx-spacing: 10;
-}
-
-/* PANEL TITLE */
-.manage-panel-title {
-    -fx-font-size: 18px;
-    -fx-text-fill: #00594E;
-    -fx-padding: 0 0 10 0;
-}
-
-/* LABELS & VALUES */
-.manage-label {
-    -fx-font-size: 14px;
-    -fx-text-fill: #00594E;
-}
-.manage-value {
-    -fx-font-size: 14px;
-    -fx-text-fill: #00594E;
-}
-
-/* ALERT TIMES BOX */
-.manage-times-box {
+/* WELCOME CARD - Header */
+.welcome-card {
     -fx-background-color: white;
-    -fx-background-radius: 5px;
-    -fx-padding: 10;
-    -fx-spacing: 10;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+    -fx-pref-height: 80px;
+    -fx-min-height: 80px;
 }
-.manage-times-box .button {
-    -fx-background-color: #00594E;
-    -fx-text-fill: white;
-    -fx-background-radius: 5px;
+
+.welcome-banner {
+    -fx-background-color: transparent;
+    -fx-background-radius: 12px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-min-height: 80px;
+    -fx-pref-height: 80px;
+}
+
+.greeting-text {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #12594C;
+}
+
+.slogan-text {
     -fx-font-size: 14px;
-    -fx-pref-width: 80px;
-    -fx-pref-height: 40px;
+    -fx-text-fill: #666666;
+    -fx-font-weight: 500;
+    -fx-wrap-text: true;
+}
+
+/* SCHEDULE CARD - Main Content */
+.schedule-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+    -fx-padding: 15;
+}
+
+/* SECTION TITLES */
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #12594C;
+    -fx-padding: 0 0 14 0;
+    -fx-spacing: 0;
+}
+
+/* ACTIVE ALERTS CONTAINER */
+.active-alerts-container {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px;
+    -fx-pref-width: 250px;
+    -fx-pref-height: 400px;
+    -fx-min-height: 400px;
+    -fx-alignment: top-center;
+}
+
+/* MEDICINE BUTTONS */
+.medicine-buttons-container {
+    -fx-alignment: center;
+    -fx-spacing: 8;
+    -fx-padding: 0;
+}
+
+/* Medicine Scroll Pane */
+.medicine-scroll {
+    -fx-background-color: transparent;
+    -fx-fit-to-width: true;
+    -fx-pref-height: 380px;
+    -fx-min-height: 380px;
+    -fx-hbar-policy: NEVER;
+    -fx-vbar-policy: AS_NEEDED;
+}
+
+/* Vertical Scroll Bar Styling */
+.medicine-scroll .scroll-bar:vertical {
+    -fx-background-color: #C4E3D4;
+    -fx-pref-width: 10px;
+}
+
+.medicine-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #12594C;
+    -fx-background-radius: 5px;
+    -fx-opacity: 0.7;
+}
+
+/* MEDICINE INFORMATION CONTAINER */
+.medicine-info-container {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8px;
+    -fx-padding: 20;
+    -fx-pref-width: 270;
+    -fx-min-width: 270;
+    -fx-max-width: 270;
+    -fx-pref-height: 400;
+    -fx-min-height: 400;
+    -fx-alignment: top-center;
+}
+
+.medicine-info-grid {
+    -fx-padding: 0;
+    -fx-pref-width: 245;
+    -fx-min-width: 245;
+    -fx-spacing: 0;
+}
+
+/* INFO LABELS AND VALUES */
+.info-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #12594C;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.info-value {
+    -fx-font-size: 13px;
+    -fx-text-fill: #12594C;
+    -fx-alignment: CENTER_LEFT;
+    -fx-wrap-text: true;
+}
+
+/* ALERT TIMES SECTION */
+.alert-times-section {
+    -fx-spacing: 8px;
+    -fx-padding: 5px 0;
+}
+
+/* HORIZONTAL SCROLL PANE - Same as Set Reminder */
+.time-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-fit-to-height: true;
+    -fx-hbar-policy: as-needed;
+    -fx-vbar-policy: never;
+    -fx-max-height: 80px;
+    -fx-min-height: 80px;
+}
+
+.time-scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.time-scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-background-radius: 5px;
+    -fx-padding: 2px;
+}
+
+.time-scroll-pane .scroll-bar:horizontal .thumb {
+    -fx-background-color: #12594C;
+    -fx-background-radius: 5px;
+}
+
+.time-scroll-pane .scroll-bar:horizontal .track {
+    -fx-background-color: #B4E8D4;
+    -fx-background-radius: 5px;
+}
+
+.time-pills-container {
+    -fx-alignment: center-left;
+    -fx-spacing: 6;
+    -fx-padding: 5px;
+}
+
+/* TIME BUTTONS */
+.time-button {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+    -fx-padding: 6 8;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
+    -fx-pref-width: 72px;
+    -fx-min-width: 72px;
+    -fx-pref-height: 26px;
+    -fx-min-height: 26px;
+}
+
+.time-button:hover {
+    -fx-background-color: #0F4A3F;
+}
+
+.time-button:pressed {
+    -fx-background-color: #0A3A31;
+}
+
+/* DELETE CONTAINER */
+.delete-container {
+    -fx-padding: 20 0 0 0;
+    -fx-alignment: CENTER_RIGHT;
 }
 
 /* DELETE BUTTON */
-.manage-info-pane > Button {
-    -fx-background-color: #E57373;
+.delete-button {
+    -fx-background-color: #DC6D67;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 8 12;
+    -fx-background-radius: 6px;
+    -fx-graphic-text-gap: 6px;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
+    -fx-pref-width: 100;
+}
+
+.delete-button:hover {
+    -fx-background-color: #C55A54;
+}
+
+.delete-button:pressed {
+    -fx-background-color: #B44A44;
+}
+
+/* MISC ELEMENTS */
+.button {
+    -fx-cursor: hand;
+}
+
+.label {
+    -fx-wrap-text: true;
+}
+
+.noteLabel {
+    -fx-wrap-text: true;
+}
+
+/* EMPTY STATE */
+.empty-state-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666666;
+    -fx-text-alignment: CENTER;
+    -fx-alignment: CENTER;
+    -fx-padding: 20;
+    -fx-font-style: italic;
+}
+
+/* Medicine Button Styling */
+.medicine-button {
+    -fx-background-color: #4BA684;
     -fx-text-fill: white;
     -fx-font-size: 14px;
-    -fx-pref-width: 100px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-pref-width: 150px;
+    -fx-min-width: 150px;
+    -fx-max-width: 150px;
+    -fx-padding: 5 20 5 20;
+    -fx-wrap-text: true;
+    -fx-alignment: CENTER;
+}
+
+.medicine-buttons-container .button:hover {
+    -fx-background-color: #3D9574;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.3, 0, 1);
+    -fx-cursor: hand;
+}
+
+.medicine-buttons-container .button:pressed {
+    -fx-background-color: #24675B;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.3, 0, 1);
+    -fx-cursor: hand;
+}
+
+.medicine-button:selected, .medicine-buttons-container .button:selected {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+}
+
+.nav-button-active {
+    -fx-background-color: #12594C;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-pref-width: 180px;
     -fx-pref-height: 40px;
-    -fx-background-radius: 5px;
+    -fx-background-radius: 10px;
+    -fx-font-weight: 600;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 18;
+    -fx-graphic-text-gap: 12;
+    -fx-cursor: hand;
 }
